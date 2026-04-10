@@ -1,0 +1,280 @@
+/* ══════════════════════════════════════════════
+   HomePage.css
+══════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@500&display=swap');
+
+:root {
+  --accent:       #0694a2;
+  --accent-light: #e6f7f8;
+  --green:        #0e9f6e;
+  --red:          #e02424;
+  --red-light:    #fee2e2;
+  --border:       #e5e7eb;
+  --bg:           #f3f4f6;
+  --card:         #ffffff;
+  --text:         #111827;
+  --text-sub:     #6b7280;
+  --text-muted:   #9ca3af;
+  --shadow:       0 2px 12px rgba(0,0,0,0.07);
+}
+ 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+
+/* ── Page ── */
+.home-page { height: 100vh; overflow-y: auto; background: var(--bg); }
+
+/* ── Top bar ── */
+.home-topbar {
+  background: #1a1f2e;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-brand      { font-size: 16px; font-weight: 700; color: #fff; }
+.home-brand span { color: #63b3ed; }
+
+/* ── Content wrapper ── */
+.home-content { padding: 28px 32px; }
+
+/* ── Page heading ── */
+.home-heading { margin-bottom: 20px; }
+.home-heading h2 { font-size: 20px; font-weight: 700; }
+.home-heading p  { font-size: 13px; color: var(--text-sub); margin-top: 3px; }
+
+/* ── Search bar ── */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  max-width: 600px;
+}
+.search-input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-family: 'DM Sans', sans-serif;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+  transition: border 0.15s;
+}
+.search-input:focus { border-color: var(--accent); }
+
+.search-btn {
+  padding: 10px 22px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.search-btn:hover { background: #057a85; }
+
+.clear-btn {
+  padding: 10px 16px;
+  background: #f3f4f6;
+  color: var(--text-sub);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.clear-btn:hover { background: #e5e7eb; }
+
+/* ── Cards grid ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+/* ── Create card ── */
+.create-card {
+  background: var(--card);
+  border: 2px dashed var(--accent);
+  border-radius: 14px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 180px;
+}
+.create-card:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.create-card-icon {
+  width: 48px; height: 48px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 300;
+  transition: background 0.2s;
+}
+.create-card:hover .create-card-icon { background: #fff; }
+.create-card-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.create-card-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ── Employee card ── */
+.emp-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.emp-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.emp-card-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0694a2, #0e9f6e);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.emp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.emp-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+.emp-card-email {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.emp-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+.emp-card-row {
+  display: flex;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-sub);
+}
+.emp-card-row strong { color: var(--text); font-weight: 600; }
+
+/* Delete button on card */
+.emp-card-delete {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: var(--red-light);
+  color: var(--red);
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.emp-card-delete:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+/* ── Loading / empty ── */
+.home-loading, .home-empty {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.home-loading .spinner {
+  width: 28px; height: 28px;
+  border: 3px solid #e5e7eb;
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Delete Confirm Modal ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.15s ease;
+}
+.modal-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 28px;
+  max-width: 340px; width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  animation: slideUp 0.2s ease;
+}
+.modal-icon {
+  width: 56px; height: 56px;
+  background: var(--red-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.modal-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.modal-sub   { font-size: 13px; color: var(--text-sub); margin-bottom: 22px; line-height: 1.5; }
+.modal-actions { display: flex; gap: 10px; }
+.modal-btn {
+  flex: 1; padding: 10px;
+  border-radius: 8px;
+  font-size: 13.5px; font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer; border: none; transition: all 0.15s;
+}
+.modal-btn--cancel  { background: #f3f4f6; color: var(--text); border: 1px solid var(--border); }
+.modal-btn--cancel:hover  { background: #e5e7eb; }
+.modal-btn--confirm { background: var(--red); color: #fff; }
+.modal-btn--confirm:hover { background: #b91c1c; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
