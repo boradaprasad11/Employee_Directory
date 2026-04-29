@@ -98,7 +98,7 @@ export default function CreateEmployee() {
   const Msg = ({ name }) => (
     <>
       {touched[name] && errors[name] && <span className="field-error">⚠ {errors[name]}</span>}
-      {touched[name] && !errors[name] && <span className="field-success">✓ Looks good!</span>}
+      {/* {touched[name] && !errors[name] && <span className="field-success">✓ Looks good!</span>} */}
     </>
   );
 
